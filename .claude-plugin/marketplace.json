@@ -1,0 +1,23 @@
+{
+  "name": "toolkit",
+  "description": "Small, focused Claude Code plugins for running file-based agent teams: onboarding an agent to a coordinator's inbox and outbox, and read-only reviewer subagents.",
+  "owner": {
+    "name": "Caleb Sylvest"
+  },
+  "plugins": [
+    {
+      "name": "agent-onboarding",
+      "source": "./plugins/agent-onboarding",
+      "description": "Charter template, a /start-work skill and an .agent/ inbox-outbox setup for an agent that takes tasks from a coordinator agent.",
+      "category": "productivity",
+      "tags": ["agents", "orchestration", "onboarding"]
+    },
+    {
+      "name": "reviewers",
+      "source": "./plugins/reviewers",
+      "description": "Read-only fact-checker and editorial-reviewer subagents that return PASS, FAIL or ESCALATE.",
+      "category": "productivity",
+      "tags": ["review", "subagents", "writing"]
+    }
+  ]
+}

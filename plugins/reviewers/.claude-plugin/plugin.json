@@ -1,0 +1,10 @@
+{
+  "name": "reviewers",
+  "version": "0.1.0",
+  "description": "Read-only reviewer subagents: fact-checker checks claims against primary sources, editorial-reviewer checks prose against your style guide. Each returns PASS, FAIL or ESCALATE.",
+  "author": {
+    "name": "Caleb Sylvest"
+  },
+  "license": "MIT",
+  "keywords": ["review", "fact-check", "editorial", "subagents"]
+}

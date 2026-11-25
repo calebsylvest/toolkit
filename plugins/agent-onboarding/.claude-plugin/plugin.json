@@ -1,0 +1,10 @@
+{
+  "name": "agent-onboarding",
+  "version": "0.1.0",
+  "description": "Onboard a repo's agent to a coordinator: a charter section for CLAUDE.md, a generic /start-work skill, and the .agent/ inbox and outbox hand-off.",
+  "author": {
+    "name": "Caleb Sylvest"
+  },
+  "license": "MIT",
+  "keywords": ["agents", "orchestration", "inbox", "outbox", "start-work"]
+}
