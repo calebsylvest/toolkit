@@ -8,7 +8,7 @@ Onboard a repo's agent to a coordinator agent that sends it tasks through files.
 | `skills/start-work` | `/agent-onboarding:start-work [status \| just tasks \| <task file>]`: sync, status, coordinator tasks oldest first, then the repo's own queue, then wrap-up with reports filed. |
 | `templates/charter-section.md` | The two `CLAUDE.md` sections: command rules that never trigger a permission prompt (including no backslash escapes), and coordinator tasks (inbox, outbox report format, filing to `done/`, messaging the coordinator or a setup bot directly). |
 | `templates/task.md` | What a coordinator writes to `.agent/inbox/YYYY-MM-DD-<slug>.md`. |
-| `templates/report.md` | What the agent writes to `.agent/outbox/<task file name>`, including "Knowledge flags": shared knowledge that was missing, wrong or stale, for the coordinator to batch to a knowledge curator agent. Agents flag gaps; they never edit shared knowledge themselves. |
+| `templates/report.md` | What the agent writes to `.agent/outbox/<task file name>`, including the decision format for "Needs <owner>" (what a coordinator's decision queue expects; see the `coordinator` plugin) and "Knowledge flags": shared knowledge that was missing, wrong or stale, for the coordinator to batch to a knowledge curator agent. Agents flag gaps; they never edit shared knowledge themselves. |
 
 Placeholders: `<agent-name>`, `<owner>`, `<coordinator>`, `<coordinator-lowercase>`, `<setup-bot>`, `<scratch-dir>`, `<repo>`.
 
