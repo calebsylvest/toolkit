@@ -22,9 +22,9 @@
     {
       "name": "reviewers",
       "source": "./plugins/reviewers",
-      "description": "Read-only fact-checker and editorial-reviewer subagents that return PASS, FAIL or ESCALATE.",
+      "description": "Read-only reviewer subagents: fact-checker and editorial-reviewer return PASS, FAIL or ESCALATE on a diff; skill-reviewer vets a third-party skill at a pinned commit before install.",
       "category": "productivity",
-      "tags": ["review", "subagents", "writing"]
+      "tags": ["review", "subagents", "writing", "security"]
     }
   ]
 }
