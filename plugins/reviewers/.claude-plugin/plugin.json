@@ -1,10 +1,10 @@
 {
   "name": "reviewers",
-  "version": "0.1.0",
-  "description": "Read-only reviewer subagents: fact-checker checks claims against primary sources, editorial-reviewer checks prose against your style guide. Each returns PASS, FAIL or ESCALATE.",
+  "version": "0.2.0",
+  "description": "Read-only reviewer subagents: fact-checker checks claims against primary sources, editorial-reviewer checks prose against your style guide (each returns PASS, FAIL or ESCALATE), and skill-reviewer vets a third-party skill at a pinned commit before install (INSTALL, INSTALL WITH CHANGES or REJECT).",
   "author": {
     "name": "Caleb Sylvest"
   },
   "license": "MIT",
-  "keywords": ["review", "fact-check", "editorial", "subagents"]
+  "keywords": ["review", "fact-check", "editorial", "subagents", "supply-chain", "skills"]
 }
