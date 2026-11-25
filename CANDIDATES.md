@@ -13,7 +13,6 @@ Ideas for what to build next. None of these is built yet; each needs a proposal,
 | **Self-correcting loop** | skill plus Stop hook | any repeated job with a check | Act, check, correct, stop: a Stop hook that won't let the agent call itself done until a check passes, capped at a few rounds, with a log. |
 | **Compound learnings capture** | skill | every agent | Turns each correction into a short written rule the next run reads. Check first whether an existing plugin already covers it before building. |
 | **Skill library audit** | skill | every agent | Periodically finds the costly, unused, outdated or untested skills and agents, and proposes trims for approval. |
-| **Third-party skill review** | skill | anyone installing outside skills | Vets a skill from a registry before install: what it reads, writes and runs. Skills are supply-chain inputs. |
 | **Design system review** | skill | front-end and design repos | Checks agent-built UI against a written design system after each screen and turns corrections into rules and checks. |
 | **Web typesetting checklist** | skill or reference | site repos | A checklist for setting long-form reading text on the web, applied when generating or reviewing styles. |
 
