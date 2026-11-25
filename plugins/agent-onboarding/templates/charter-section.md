@@ -65,6 +65,8 @@ Sessions usually start with `/start-work`, which does this for you.
    Decisions or approvals, each with a recommendation. "None" if nothing.
    ```
 
+   **Knowledge gaps:** if shared knowledge was missing, wrong or stale, note it under "Knowledge flags" in the report (what, where you looked, what you were doing, optional fix; see the report template). Never edit shared knowledge yourself: <coordinator> batches flags to the knowledge curator agent.
+
 4. **File the task:** move it to `.agent/inbox/done/` with one plain command: `mv .agent/inbox/<task file name> .agent/inbox/done/`. Never edit a task file; only move it.
 
 **Never block on a question in an unattended run.** Make the call the rules allow, and put anything that needs <owner> under "Needs <owner>" in the report.
