@@ -1,0 +1,10 @@
+{
+  "name": "coordinator",
+  "version": "0.1.0",
+  "description": "For the coordinator agent: a read-only /briefing that rolls up every project agent's inbox and outbox, flags stalls and unclear threads, and leads with a capped, deadline-ordered decision queue for the owner.",
+  "author": {
+    "name": "Caleb Sylvest"
+  },
+  "license": "MIT",
+  "keywords": ["agents", "orchestration", "coordinator", "briefing", "decisions"]
+}
