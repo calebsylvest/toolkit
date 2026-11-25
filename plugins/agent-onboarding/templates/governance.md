@@ -24,6 +24,8 @@
 
 Three tiers. When something fits more than one, the higher tier decides. When you can't tell which tier it is, treat it as the higher one.
 
+**Approved tier-1 lines win for what they name.** When <owner> has explicitly approved a tier-1 line for this agent (for example "merge and deploy content changes once the checks pass"), that line overrides the standard tier-3 list for those named kinds only. Everything else in tier 3 still needs <owner>. Record the approval as a written delegation below, so the carve-out has <owner>'s words and a date.
+
 | Tier | Who decides | What | For this repo |
 |---|---|---|---|
 | 1 | **<agent-name>** (this agent) | Reversible work inside this repo, under this file's rules: branches, fixes, refactors, docs, tests, opening PRs. | <tier-1-list> (e.g. "merge docs-only PRs; publish typo fixes") |
