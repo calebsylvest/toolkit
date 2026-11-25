@@ -4,8 +4,6 @@ Ideas for what to build next. None of these is built yet; each needs a proposal,
 
 | Candidate | Would be | Fits | Why build it |
 |---|---|---|---|
-| **Agent status briefing** | skill for the coordinator | coordinator agents | One command rolls up every project agent's inbox, done and outbox, flags stalled tasks, and leads with what needs the human. The natural pair to `agent-onboarding`. |
-| **Decision queue** | skill or template for the coordinator | coordinator agents | Caps and orders the "Needs <owner>" items from every report (at most a handful at once, by deadline, each with a recommendation) so the human isn't the bottleneck. |
 | **Work order (task) template** | template in `agent-onboarding` | coordinator agents | Extends `templates/task.md` with explicit guardrails and checkpoints, so unattended runs take fewer wrong turns. Small change, ready to build. |
 | **Agent governance block** | template in `agent-onboarding` | every agent | A standard "who decides what" section: written delegations, a Never list, separation of powers, and a settings check. Makes authority rules uniform across agents. |
 | **Session handoff harness** | skill | any multi-session project | Scaffolds a pass/fail requirements file, a progress log, a smoke-test script and a startup checklist, so each new session orients in seconds. |

@@ -9,6 +9,7 @@ Each plugin is small and does one job. Install only the ones you need.
 | Plugin | What it gives you |
 |---|---|
 | [`agent-onboarding`](plugins/agent-onboarding/) | Everything an agent needs to take tasks from a coordinator: a charter section for `CLAUDE.md` (inbox read oldest first, the outbox report format, filing to `done/`, command rules that never trigger a permission prompt, and how to reach the coordinator directly), a generic `/start-work` session skill, and a `/setup-handoff` skill that creates the `.agent/` inbox and outbox. |
+| [`coordinator`](plugins/coordinator/) | For the coordinator agent. `/coordinator:briefing` gives the owner one screen, decisions first: every project agent's inbox, done and outbox since the last briefing, task states, stalled tasks, threads whose status can't be told, and the decision queue (at most 5 "Decide now", by deadline). Read-only. Reads Orca's items and waiting agents if you use Orca; works without it. |
 | [`reviewers`](plugins/reviewers/) | Two read-only subagents. `fact-checker` checks every claim a diff adds against primary sources. `editorial-reviewer` checks new prose against your style guide. Both have a tool allowlist, run only a few named Bash commands, and return PASS, FAIL or ESCALATE. |
 
 ```
@@ -24,6 +25,13 @@ toolkit/
 │   │       ├── charter-section.md       ← paste into CLAUDE.md
 │   │       ├── task.md                  ← a coordinator's task file
 │   │       └── report.md                ← an agent's outbox report
+│   ├── coordinator/
+│   │   ├── .claude-plugin/plugin.json
+│   │   ├── skills/briefing/SKILL.md     ← /coordinator:briefing
+│   │   ├── scripts/scan_agents.py       ← reads every agent's .agent/ folders
+│   │   └── templates/
+│   │       ├── decision-queue.md        ← the decision format and rules
+│   │       └── coordinator.example.json ← example config
 │   └── reviewers/
 │       ├── .claude-plugin/plugin.json
 │       └── agents/
@@ -56,6 +64,7 @@ coordinator agent                         project agent (one per repo)
 ```
 /plugin marketplace add calebsylvest/toolkit
 /plugin install agent-onboarding@toolkit
+/plugin install coordinator@toolkit
 /plugin install reviewers@toolkit
 /reload-plugins
 ```
@@ -65,6 +74,7 @@ coordinator agent                         project agent (one per repo)
 ```bash
 claude plugin marketplace add calebsylvest/toolkit
 claude plugin install agent-onboarding@toolkit --scope project
+claude plugin install coordinator@toolkit --scope project
 claude plugin install reviewers@toolkit --scope project
 ```
 
@@ -114,6 +124,8 @@ Notes:
 ```
 
 It creates `.agent/inbox/done/`, `.agent/outbox/` and `.agent/tmp/`, gitignores `.agent/`, and adds the charter sections to `CLAUDE.md` with your names filled in, on a branch for you to review. Then start each session with `/agent-onboarding:start-work` (or a repo-local `/start-work`, below).
+
+**Brief the owner.** In the coordinator's repo, copy `plugins/coordinator/templates/coordinator.example.json` to `coordinator.json`, list your agents, gitignore `coordinator.state.json`, and run `/coordinator:briefing`. See the [plugin README](plugins/coordinator/).
 
 **Review a change.** Ask for it in plain words ("run fact-checker on this branch against main") or by name: `@agent-reviewers:fact-checker`, `@agent-reviewers:editorial-reviewer`. Tell your agent in `CLAUDE.md` when to dispatch each, for example:
 

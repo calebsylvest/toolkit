@@ -1,0 +1,17 @@
+{
+  "owner": "<owner>",
+  "coordinator": "<coordinator>",
+  "agents": [
+    { "name": "<agent-name>", "repo": "~/Code/<repo>", "bot": "<bot-name>" },
+    { "name": "<other-agent>", "repo": "~/Code/<other-repo>", "bot": null, "stall_hours": 72 }
+  ],
+  "orchestrator": {
+    "type": "orca",
+    "bots": ["<coordinator>", "<setup-bot>", "<bot-name>"]
+  },
+  "stall_hours": 36,
+  "deadline_days": { "red": 0, "orange": 3, "yellow": 7 },
+  "dot_style": "emoji",
+  "decide_now_max": 5,
+  "state_file": "coordinator.state.json"
+}
