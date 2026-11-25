@@ -5,7 +5,6 @@ Ideas for what to build next. None of these is built yet; each needs a proposal,
 | Candidate | Would be | Fits | Why build it |
 |---|---|---|---|
 | **Work order (task) template** | template in `agent-onboarding` | coordinator agents | Extends `templates/task.md` with explicit guardrails and checkpoints, so unattended runs take fewer wrong turns. Small change, ready to build. |
-| **Agent governance block** | template in `agent-onboarding` | every agent | A standard "who decides what" section: written delegations, a Never list, separation of powers, and a settings check. Makes authority rules uniform across agents. |
 | **Session handoff harness** | skill | any multi-session project | Scaffolds a pass/fail requirements file, a progress log, a smoke-test script and a startup checklist, so each new session orients in seconds. |
 | **Verified multi-phase audit** | skill (`/audit <target>`) | code and content repos | Map the territory, find issues in isolation, have a fresh agent try to disprove each, report only what survives. Reusable for code review, link checks or fact-checking. |
 | **Adversarial bug hunt** | three subagents (finder, skeptic, referee) | code repos | Opposed incentives cancel out sycophantic false positives. Fits next to `reviewers`. |

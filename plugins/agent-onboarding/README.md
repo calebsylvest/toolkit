@@ -7,9 +7,10 @@ Onboard a repo's agent to a coordinator agent that sends it tasks through files.
 | `skills/setup-handoff` | `/agent-onboarding:setup-handoff <agent-name> <owner> <coordinator> [setup-bot]`: creates `.agent/inbox/done/`, `.agent/outbox/`, `.agent/tmp/`, gitignores `.agent/`, and adds the charter sections to `CLAUDE.md`, on a branch. Runs only when you call it. |
 | `skills/start-work` | `/agent-onboarding:start-work [status \| just tasks \| <task file>]`: sync, status, coordinator tasks oldest first, then the repo's own queue, then wrap-up with reports filed. |
 | `templates/charter-section.md` | The two `CLAUDE.md` sections: command rules that never trigger a permission prompt (including no backslash escapes), and coordinator tasks (inbox, outbox report format, filing to `done/`, messaging the coordinator or a setup bot directly). |
+| `templates/governance.md` | An optional `CLAUDE.md` section on who decides what: three tiers (owner, coordinator, project agent), written delegations with the date and the owner's words, a Never list, separation of powers, refusing second-hand approvals, a settings check (auto mode on, bypass off, deny rules), third-party code, and how to ask. Use the same one in every agent's repo. |
 | `templates/task.md` | What a coordinator writes to `.agent/inbox/YYYY-MM-DD-<slug>.md`. |
 | `templates/report.md` | What the agent writes to `.agent/outbox/<task file name>`, including the decision format for "Needs <owner>" (what a coordinator's decision queue expects; see the `coordinator` plugin) and "Knowledge flags": shared knowledge that was missing, wrong or stale, for the coordinator to batch to a knowledge curator agent. Agents flag gaps; they never edit shared knowledge themselves. |
 
-Placeholders: `<agent-name>`, `<owner>`, `<coordinator>`, `<coordinator-lowercase>`, `<setup-bot>`, `<scratch-dir>`, `<repo>`.
+Placeholders: `<agent-name>`, `<owner>`, `<coordinator>`, `<coordinator-lowercase>`, `<setup-bot>`, `<scratch-dir>`, `<repo>`; `governance.md` adds `<tier-1-list>`, `<tier-2-list>`, `<tier-3-list>`, `<never-list>` and `<knowledge-curator>`.
 
 To give a repo its own `/start-work`, copy `skills/start-work/SKILL.md` to the repo's `.claude/skills/start-work/SKILL.md` and edit it.

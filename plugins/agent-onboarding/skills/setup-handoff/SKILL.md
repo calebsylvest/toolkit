@@ -41,6 +41,7 @@ Read `.gitignore`. If it has no `.agent/` line, add one with Edit (or create the
 2. Replace every placeholder with the values from step 1. `<coordinator-lowercase>` is the coordinator's name in lowercase. If there is no setup bot, delete the "Reaching <setup-bot>" paragraph.
 3. Read the repo's `CLAUDE.md`. If it already has a command-rules or coordinator-tasks section, merge: keep the repo's stricter rules and add only what's missing. Otherwise append both sections. Drop the template's leading comment.
 4. Keep repo-specific details (paths, scripts, the repo's own queue) in the repo's own sections, not in these two.
+5. Optional: if the owner wants uniform authority rules, also add `${CLAUDE_PLUGIN_ROOT}/templates/governance.md`. Its tier lists and delegations are the owner's words: leave those placeholders for the owner to fill in, and say so in the hand-back.
 
 ## 5. Optional: a repo-local /start-work
 

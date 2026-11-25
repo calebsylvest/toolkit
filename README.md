@@ -8,7 +8,7 @@ Each plugin is small and does one job. Install only the ones you need.
 
 | Plugin | What it gives you |
 |---|---|
-| [`agent-onboarding`](plugins/agent-onboarding/) | Everything an agent needs to take tasks from a coordinator: a charter section for `CLAUDE.md` (inbox read oldest first, the outbox report format, filing to `done/`, command rules that never trigger a permission prompt, and how to reach the coordinator directly), a generic `/start-work` session skill, and a `/setup-handoff` skill that creates the `.agent/` inbox and outbox. |
+| [`agent-onboarding`](plugins/agent-onboarding/) | Everything an agent needs to take tasks from a coordinator: a charter section for `CLAUDE.md` (inbox read oldest first, the outbox report format, filing to `done/`, command rules that never trigger a permission prompt, and how to reach the coordinator directly), a generic `/start-work` session skill, a `/setup-handoff` skill that creates the `.agent/` inbox and outbox, and an optional governance section (three-tier decision rights, written delegations, a Never list, separation of powers, a settings check). |
 | [`coordinator`](plugins/coordinator/) | For the coordinator agent. `/coordinator:briefing` gives the owner one screen, decisions first: every project agent's inbox, done and outbox since the last briefing, task states, stalled tasks, threads whose status can't be told, and the decision queue (at most 5 "Decide now", by deadline). Read-only. Reads Orca's items and waiting agents if you use Orca; works without it. |
 | [`reviewers`](plugins/reviewers/) | Three read-only subagents. `fact-checker` checks every claim a diff adds against primary sources. `editorial-reviewer` checks new prose against your style guide. Both return PASS, FAIL or ESCALATE. `skill-reviewer` (and `/reviewers:review-skill`) vets a third-party skill at a pinned commit before install: its access, how broadly it triggers, and every script, returning INSTALL, INSTALL WITH CHANGES or REJECT. All have a tool allowlist and run only a few named Bash commands. |
 
@@ -23,6 +23,7 @@ toolkit/
 │   │   │   └── setup-handoff/SKILL.md   ← /agent-onboarding:setup-handoff
 │   │   └── templates/
 │   │       ├── charter-section.md       ← paste into CLAUDE.md
+│   │       ├── governance.md            ← optional: who decides what
 │   │       ├── task.md                  ← a coordinator's task file
 │   │       └── report.md                ← an agent's outbox report
 │   ├── coordinator/
